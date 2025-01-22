@@ -14,7 +14,7 @@ phone_number = os.getenv('phone_number')
 channel_usernames = [
         'ZemenExpress', 'sinayelj', 'MerttEka', 'yebatochmregagroup', 
         'helloomarketethiopia', 'Leyueqa', 'kstoreaddis', 'Fashiontera'
-    ] # Add more channels here
+    ] 
 
 # Initialize the client
 client = TelegramClient('session_name', api_id, api_hash)
@@ -22,11 +22,6 @@ client = TelegramClient('session_name', api_id, api_hash)
 # Create a list to hold the dataset
 data = []
 
-# # Function to preprocess text
-# def preprocess_text(text):
-#     text = re.sub(r'[^ፈ-ዕ0-9 ]+', '', text)  # Keep only Amharic letters and numbers
-#     tokens = text.split()  # Tokenize by spaces
-#     return tokens
 
 def preprocess_text(text):
     # Keep only Amharic letters (Unicode range for Amharic is 0x1200 - 0x137F) and numbers
@@ -51,7 +46,7 @@ async def scrape_telegram_data():
                     document = message.media.document
                     media_path = next((attr.file_name for attr in document.attributes if isinstance(attr, DocumentAttributeFilename)), "No file name")
                 elif isinstance(message.media, MessageMediaPhoto):
-                    media_path = "Photo not saved"  # Handle saving if needed
+                    media_path = "Photo not saved"  
                 else:
                     media_path = "Other media type"
 

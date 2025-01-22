@@ -2,7 +2,6 @@ import pandas as pd
 import re
 
 # Load the scraped data from the CSV file
-# Replace 'scraped_data.csv' with the actual path to your CSV file
 df = pd.read_csv('telegram_scraped_data.csv')
 
 # Function to preprocess and tokenize the text
