@@ -4,9 +4,6 @@ import re
 import pymongo
 
 # --- Configuration ---
-api_id = '22603249'
-api_hash = '51a0980b933520481783246cd0c70189'
-bot_token = '7862282736:AAHW6muxQS5A3oplNBo84Oj7QR33qtaGY2A'
 
 # Initialize Telegram client
 client = TelegramClient('session_name', api_id, api_hash).start(bot_token=bot_token)
